@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <style>
+    body {
+    /* The image used */
+    background-image: url('JS.jpg');
+  
+    /* Full height */
+    height: 100%; 
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+    </style>
+    <title>Input</title>
+</head>
+<body>
+    <script>
+        function computeResult(form){
+            //smaller or bigger number
+            firstnum=form.firstNumber.value;
+            secondnum=form.secondNumber.value;
+
+            document.write("The smaller number is:"+ Math.min(firstnum,secondnum));
+            document.write("<br>");
+            document.writeln("The larger number is:"+ Math.max(firstnum,secondnum));
+            document.write("<br>");
+
+            //odd or even
+            if(firstnum % 2 == 0) {
+            document.writeln("The number is an even number.");
+            document.write("<br>");
+            }
+            else {
+            document.writeln("The number is an odd number.");
+            document.write("<br>");
+            }
+            //equal or different
+            if (firstnum == secondnum ? 'equal' : 'different'){
+                document.writeln("The numbers are equal");
+                document.write("<br>");
+            }
+            else
+                document.writeln("The numbers are different");   
+            document.write("<br>");
+
+            //odd or even using ternary operator
+           if(firstnum % 2 == 0 ? 'even': 'odd'){
+                document.writeln("The number is even.");
+                document.write("<br>");
+           }
+            else 
+                document.writeln("The number is odd.");
+            
+            //printing greater number using ternary operator
+            if (firstnum > secondnum ? 'greater' : 'smaller'){
+                 document.writeln("Greater number is:"+secondnum);
+            }
+            else
+            document.writeln("Greater number is:"+numA);       
+      
+            //check password match    
+            password1 = form.password1.value;
+                password2 = form.password2.value;
+                 if (password1 != password2) {
+                    document.writeln("Oops! Wrong password. Please try again..")
+                    document.write("<br>");
+                 }
+                 else{
+                    document.writeln("Hurray!!!! Valid password.")
+                    document.write("<br>");
+                }
+         
+     
+            //finding teenage or twenties based on year of birth
+            var currentyear=2022;
+            var yob=form.yob.value;
+            var age=currentyear-yob;
+           
+            if(age>=13 && age<=19)
+            document.writeln("You're a teenager. Enjoy while it lasts!");
+            else
+            document.writeln("Oh no, you're in your twenties..");
+            document.write("<br>");
+            //checking validity of voting age
+            if(age>18)
+            document.writeln("Congratulations! You may vote.");
+            else
+            document.writeln("Sorry, you cannot vote since you're underage.");
+            document.write("<br>");
+
+             //names related to age in ascending/descending order
+            var harshit=form.age1.value;
+            var pooja=form.age2.value;
+            var udhai=form.age3.value;
+
+            var namesArray = [
+                { name: 'Harshit', age: harshit},
+                { name: 'Pooja',   age: pooja},
+                { name: 'Udhai',   age: udhai},
+            ];
+      
+            document.write("Names in ascending order:"+ 
+            namesArray.slice().sort((a, b) => a.age - b.age).map(({name}) => name));
+            
+            document.write("Names in descending order:"+
+            namesArray.slice().sort((a, b) => b.age - a.age).map(({name}) => name));
+            document.write("<br>");
+
+       
+            //printing short format of given day and month
+            var day = form.day.value;
+            var month = form.month.value;
+            document.write ("Day of the week is:"+day.slice(0,3));
+            document.write ("Month of the year is:"+month.slice(0,3));
+            document.write("<br>");
+
+
+            //print valid/invalid pincode
+           var pincode=form.pincode.value;
+            if(pincode.length==6)
+                document.write("Congratulations! The code is valid");
+            else
+                document.write("Sorry, your code is invalid");
+            document.write("<br>");
+
+
+             //print corresponding names for different shirt codes
+             var shirtsize=form.shirtsize.value;
+             if(shirtsize == 'S')
+                 document.write("Your shirt size is small.");
+             else if(shirtsize == 'M')
+                 document.write("Your shirt size is medium.");
+             else if(shirtsize == 'L')
+                document.write("Your shirt size is large.");
+            else if(shirtsize == 'XL')
+                document.write("Your shirt size is extra large.");
+            else 
+                document.write("None");
+            document.write("<br>");
+
+
+            //calculating BMI based on height/weigth
+            var height=form.height.value;
+            var weight=form.weight.value;
+             var bmi = (weight / Math.pow( (height/100), 2 )).toFixed(1);
+             if(bmi < 18.5)
+                document.write("You are underweight.");
+            else if(bmi > 18.5 && bmi < 24.9)
+                document.write("You are in the healthy weight range.");
+            else if(bmi > 25 && bmi < 29.9)
+                document.write("You are in the overweight range.");
+            else if(bmi > 30 && bmi < 39.9)
+                document.write("You are in the obese range.");
+        
+            return;
+ }
+              
+    </script>
+
+<form onSubmit = "computeResult(this)">
+    <table border = 1 align = "center">
+        
+        <tr>
+            <td><b>Finding smaller, larger, even, odd, equal or different numbers:</b></td>
+        </tr>
+        <tr>
+            <td>Enter 1st Number:</td>
+            <td> <input type = "text" name=firstNumber size=25</td>
+        </tr>
+        <tr>
+            <td>Enter 2nd Number:</td>
+            <td> <input type = "text" name=secondNumber size=25</td>
+        </tr>
+        <tr>
+            <td><b>Finding Password Match:</b></td>
+        </tr>
+        <tr>
+            <td>Enter password:</td>
+            <td><input type = password name = password1 size = 25</td>
+        </tr>
+        <tr>
+            <td>Confirm password:</td>
+            <td><input type = password name = password2 size = 25></td>
+        </tr>
+
+        <tr>
+            <td><b>Age based: Teenager/Twenties, voting right</b></td>
+        </tr>
+        <tr>
+            <td>Enter your year of birth:</td>
+            <td><input type=text name=yob size=25></td>
+        </tr>
+
+        <tr>
+            <td><b> Names related to age in ascending & descending order:</b></td>
+        </tr>
+        <tr>
+            <td>Enter age1:</td>
+            <td><input type="text" name=age1 size = 25></td>
+        </tr>
+        <tr>
+            <td>Enter age2:</td>
+            <td><input type="text" name=age2 size = 25></td>
+        </tr>
+        <tr>
+            <td>Enter age3:</td>
+            <td><input type="text" name=age3 size = 25></td>
+        </tr>
+
+        <tr>
+            <td><b>Day of the week & Month of the year:</b></td>
+        </tr>   
+        <tr>
+            <td>Enter day:(ex: Monday)</td>
+            <td><input type="text" name=day size = 25></td>
+        </tr>
+        <tr>
+            <td>Enter month:(ex: January)</td>
+            <td><input type="text" name=month size = 25></td>
+        </tr> 
+        
+
+        <tr>
+            <td><b>Pincode validation:</b></td>
+        </tr>
+        <tr>
+            <td>Enter pincode:</td>
+            <td><input type="text" name=pincode size = 25></td>
+        </tr> 
+
+
+        <tr>
+            <td><b> Shirt Size:</b></td>
+        </tr>
+      <tr>
+            <td>Enter shirt size code (S,M,L,XL):</td>
+            <td><input type="text" name=shirtsize size = 25></td>
+        </tr> 
+
+        <tr>
+            <td><b>BMI (Body-Mass Index):</b></td>
+        </tr>
+        <tr>
+            <td>Enter height (in cm):</td>
+            <td><input type="text" name=height size = 25></td>
+        </tr>
+        <tr>
+            <td>Enter weight (in kg):</td>
+            <td><input type="text" name=weight size = 25></td>
+        </tr>
+
+        <tr>
+        <td colspan = 2 align = right>
+            <center> 
+                <input type = submit value = "Submit">
+                <input type = reset value = "Reset">
+            </center>
+        </td>
+        </tr>
+    </table>
+    </form>
+    
+</body>
+</html>
