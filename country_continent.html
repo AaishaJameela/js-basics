@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country & Continent</title>
+</head>
+
+<body>
+   <script>
+     function findContinent(form)
+     {
+      //country=document.getElementById("country");
+      var country = form.country.value;
+      console.log("country is:"+country);
+
+      switch (country) 
+      {
+        case '1':
+        case '3':
+        case '4':
+        case '14':
+          alert("Your country is in Asia");
+          break;
+        case '2':
+        case '10':
+        case '13':
+          alert("Your country is in North America");
+          break;
+        case '5':
+          alert("Your conuntry is in Oceania");
+          break;
+        case '6':
+        case '7':
+        case '15':
+          alert("Your country is in Europe");
+          break;
+        case '8':
+        case '9':
+          alert("Your country is in Africa");
+          break;
+        case '11':
+        case '12':
+          alert("Your country is in South America");
+          break;
+         }
+      }
+</script>
+
+<form onSubmit = "findContinent(this)"> 
+    <table border = 1 align = "center">
+        
+        <tr>
+            <td><b>Select your Country</b></td>
+            <td><select id="country" name="country">
+            <option value="0">---</option>
+            <option value="1">India</option>
+            <option value="2">United States of America</option>
+            <option value="3">China</option>
+            <option value="4">Nepal</option>
+            <option value="5">Australia</option>
+            <option value="6">France</option>
+            <option value="7">Germany</option>
+            <option value="8">South Africa</option>
+            <option value="9">Nigeria</option>
+            <option value="10">Mexico</option>
+            <option value="11">Argentina</option>
+            <option value="12">Brazil</option>
+            <option value="13">Canada</option>
+            <option value="14">Singapore</option>
+            <option value="15">Sweden</option></td>
+          </select>
+        
+        <td colspan = 2 align = right>
+            <center> 
+                <input type = submit value = "Find continent">
+            </center>
+        </td>
+
+        </tr>
+    </table> 
+    </form> 
+    
+</body>
+</html>

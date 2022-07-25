@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+        /* The image used */
+        background-image: url('JS.jpg');
+      
+        /* Full height */
+        height: 100%; 
+      
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      
+      }
+    </style>
+    <title>Input1</title>
+
+</head>
+
+<body>
+    <script> 
+
+    //print area and perimeter
+    function rectangle(form){
+        length=form.length.value;
+        breadth=form.breadth.value;
+        var area = length*breadth;
+        var perimeter = ( 2* length) + (2* breadth);
+        
+        document.write("The area of the rectangle is " + area + " and the perimeter is " + perimeter);
+    }
+
+   </script>
+
+<form onSubmit = "rectangle(this)">
+    <br> <br> <br> <br> <br> <table border = 1 align = "center">
+        
+        <tr>
+            <td><b>Perimeter and Area:</b></td>
+        </tr>
+        <tr>
+            <td>Enter the length:</td>
+            <td> <input type = "text" name=length size=25></td>
+        </tr>
+        <tr>
+            <td>Enter the breadth:</td>
+            <td> <input type = "text" name=breadth size=25></td>
+        </tr>
+
+        <tr>
+            <td colspan = 2 align = right>
+                <center> 
+                    <input type = submit value = "Submit">
+                    <input type = reset value = "Reset">
+                </center>
+            </td>
+            </tr>
+        </br> </br> </br> </br> </br> </table>
+    
+</body>
+</html>
