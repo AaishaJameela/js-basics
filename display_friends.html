@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style> 
+    [class*="custom-"] * {
+        color: inherit !important;
+    }
+    .index-even {
+        color: black;
+        background-color: white !important;
+      }
+      
+      .index-odd {
+        color: white;
+        background-color: black !important;
+      }
+      
+    </style>
+    <title>My Friends</title>
+</head>
+
+<body>
+    <center>
+        <button id="btn4">Add A Friend</button>
+        <h1>My Friends:</h1>
+        <div id="div4"></div>
+      
+    <script>
+        var div4 = document.querySelector('#div4');
+        var question4 = document.querySelector('#btn4');
+        var index = 0;
+        question4.addEventListener('dblclick', switch4);
+
+        var listContent = ['Harshit', 'Sirisha', 'Dhivya', 'Asif', 'Aaisha'];
+
+        function switch4() {
+            var newElement = document.createElement('Li');
+                if (index<=4 && index%2==0){
+                    //change background color to white and font color to black here
+                    document.body.style.backgroundColor="white";
+                    document.body.style.color="black";
+                }
+                else if (index<=4 && index%2==1){
+                   
+                    //change background color to black and text color to white here
+                    document.body.style.backgroundColor ="black";
+                    document.body.style.color="white";
+                }
+                else if (!index<=4){
+                   alert ("no more friends");
+                   btn4.disabled = true;
+                }
+                newElement.textContent = listContent[index++];
+                div4.appendChild(newElement);
+                       
+        }
+       
+    </script>
+    </center>
+</body>
+</html>
