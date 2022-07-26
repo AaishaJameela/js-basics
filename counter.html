@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+      <script>
+        clickIncrease();
+          function clickIncrease() {
+            if (localStorage.counter) {
+              localStorage.counter = Number(localStorage.counter)+1;
+            }
+            else {
+              localStorage.counter = 1;
+            }
+           document.getElementById("demo").innerHTML = localStorage.counter;
+        }
+        function clickDecrease() {
+            if (localStorage.counter) {
+              localStorage.counter = Number(localStorage.counter)-1;
+            }
+            else {
+              localStorage.counter = 1;
+            }
+           document.getElementById("demo").innerHTML = localStorage.counter;
+        }
+    </script>
+
+    <center><h1 id="demo"></h1>
+    <button onclick="clickIncrease()" type="button">Increment</button>
+    <button onclick="clickDecrease()" type="button">Decrement</button></center>
+        
+</body>
+</html>
