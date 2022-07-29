@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+let  array = [25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50];
+
+for (let i = 0; i < array.length; i++) {
+    console.log(array[i]);
+}
+
+let newArray1 = array.map(getDouble)
+function getDouble(item) {
+  return item * 2;
+}
+console.log(newArray1);
+const doubled = array.map(item => item * 2);
+console.log(doubled); 
+
+let newArray2 = array.filter(getGreater)
+function getGreater(item) {
+  return item > 35;
+}
+console.log(newArray2);
+const greaterNumbers = array.filter(item => item > 35);
+console.log(greaterNumbers); 
+
+let newArray3 = array.reduce(getTotal)
+function getTotal(result, item) {
+  return result + item
+}
+console.log(newArray3);
+const totalSum = array.reduce((result, item) => result + item, 0);
+console.log(totalSum); 
+</script>
+
+</html>
