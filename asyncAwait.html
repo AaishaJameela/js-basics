@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsyncAwait</title>
+</head>
+<body>
+    <br><br><br>
+    <center>
+        <button id="btn1" onclick="useThen()">using.then</button>
+        <button id="btn2" onclick="useAwait()">using await</button>
+    </center>
+</body>
+<script>
+    url="https://jsonplaceholder.typicode.com/posts";
+
+    try{
+
+        function useThen()
+        {
+            fetch(url).then((response)=>{
+            return response.text()
+            }).then((data)=>
+            {
+            console.log(data);
+            localStorage.setItem("Data", data);
+            })
+             
+        }
+       
+       async function useAwait()
+        {
+           const result = await useThen();
+           console.log (result);
+        }
+        useAwait();
+    } 
+    catch(error) {console.error(error);
+    }
+</script>
+</html>
