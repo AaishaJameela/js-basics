@@ -1,0 +1,10 @@
+
+.Form{
+  background-color: lightblue;
+  width: 35%;
+  font-family: "Times New Roman";
+  display: 'flex';
+}
+#btn{
+  background-color:green;
+}
