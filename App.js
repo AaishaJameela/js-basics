@@ -25,15 +25,3 @@ return (
 
 export default App;
 
-class People{
-  constructor(name, age){
-    this.person=name;
-    this.person=age;
-  }
-  function(){
-    return "I'm " +this.person +"and I'm" +this.person;
-  }
-}
-const myName = new People("aaisha");
-const myAge = new People(24); 
-myName.function();
