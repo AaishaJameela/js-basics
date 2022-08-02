@@ -1,0 +1,14 @@
+
+.Form{
+  background-color: lightblue;
+  width: 35%;
+  font-family: "Times New Roman";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -220px;
+}
+#btn{
+  background-color:green;
+}
