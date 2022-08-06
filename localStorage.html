@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage</title>
+</head>
+<body>
+    <script>
+        var input=document.getElementById("input");
+        var list=document.getElementById("list");
+        var btn=document.getElementById("btn");
+
+        var array= "Names" in localStorage ?  JSON.parse(localStorage.getItem("Names")) : [];
+
+        names()
+
+        function Submit(){
+            var name=input.value;
+            array.push(name);
+            localStorage.setItem("Names",JSON.stringify(array));
+            names()
+            input.value=""
+        }
+
+        function names(){
+            list.innerHTML=""
+            array.forEach(function(name){
+                var paratag=document.createElement('p')
+                paratag.innerText=name;
+                list.append(paratag)
+            })
+        }
+        button.addEventListener("click", Submit)
+
+
+    </script>
+    <center><input type="text" id="input" placeholder="Enter a name.."><br><br>
+    <button type="button" id="btn">Add</button>
+    <div id="list"></div></center>
+    
+     </body>
+    
+</body>
+</html>

@@ -20,22 +20,135 @@
           text-align: center;
         }
 
-          .button1 {background-color: #4CAF50;} 
-          .button2 {background-color: #008CBA;} 
-          .button3 {background-color: #f44336;} 
-          .button4 {background-color: #e7e7e7; color: black;} 
+        .button1 {background-color: #4CAF50;} 
+        .button2 {background-color: #008CBA;} 
+        .button3 {background-color: #f44336;} 
+        .button4 {background-color: #e7e7e7; color: black;} 
+
+        button:nth-child(1){
+          margin-left: 450px;
+        }
 
     </style>
 </head>
-<title> Input 2</title>
+<title>Grid</title>
         
 <body>
 
   <script>
-     function click() {
-       document.write(id);
-  
+     var button1=document.getElementById("button1");
+     var button2=document.getElementById("button2");
+     var button3=document.getElementById("button3");
+     var button4=document.getElementById("button4");
+ 
+     function viewChange1(){
+      var div1=document.getElementById("1");
+      div1.style.background="blue"
+      var para=document.createElement('p')
+      para.innerHTML="div1"
+      div1.appendChild(para)
+
+      var div2=document.getElementById("2");
+      div2.style.background="blue"
+      var para=document.createElement('p')
+      para.innerHTML="div2"
+      div2.appendChild(para)
+
+      var div3=document.getElementById("3");
+      div3.style.background="blue"
+      var para=document.createElement('p')
+      para.innerHTML="div3"
+      div3.appendChild(para)
+
+      var div4=document.getElementById("4");
+      div1.style.background="blue"
+      var para=document.createElement('p')
+      para.innerHTML="div4"
+      div4.appendChild(para)
      }
+
+     function viewChange2(){
+      var div5=document.getElementById("5");
+      div5.style.background="blue"
+      var para=document.createElement('p')
+      para.innerHTML="div5"
+      div5.appendChild(para)
+
+      var div6=document.getElementById("6");
+      div6.style.background="blue"
+      var para=document.createElement('p')
+      para.innerHTML="div6"
+      div6.appendChild(para)
+
+      var div7=document.getElementById("7");
+      div7.style.background="blue"
+      var para=document.createElement('p')
+      para.innerHTML="div7"
+      div7.appendChild(para)
+
+      var div8=document.getElementById("8");
+      div8.style.background="blue"
+      var para=document.createElement('p')
+      para.innerHTML="div8"
+      div8.appendChild(para)
+     }
+
+     function viewChange3(){
+      var div9=document.getElementById("9");
+      div1.style.background="blue"
+      var para=document.createElement('p')
+      para.innerHTML="div9"
+      div9.appendChild(para)
+
+      var div10=document.getElementById("10");
+      div10.style.background="blue"
+      var para=document.createElement('p')
+      para.innerHTML="div10"
+      div10.appendChild(para)
+
+      var div11=document.getElementById("11");
+      div11.style.background="blue"
+      var para=document.createElement('p')
+      para.innerHTML="div11"
+      div11.appendChild(para)
+
+      var div12=document.getElementById("12");
+      div1.style.background="blue"
+      var para=document.createElement('p')
+      para.innerHTML="div12"
+      div12.appendChild(para)
+     }
+
+     function viewChange4(){
+      var div13=document.getElementById("13");
+      div13.style.background="blue"
+      var para=document.createElement('p')
+      para.innerHTML="div13"
+      div13.appendChild(para)
+
+      var div14=document.getElementById("14");
+      div14.style.background="blue"
+      var para=document.createElement('p')
+      para.innerHTML="div14"
+      div14.appendChild(para)
+
+      var div15=document.getElementById("15");
+      div15.style.background="blue"
+      var para=document.createElement('p')
+      para.innerHTML="div15"
+      div15.appendChild(para)
+
+      var div16=document.getElementById("16");
+      div16.style.background="blue"
+      var para=document.createElement('p')
+      para.innerHTML="div16"
+      div16.appendChild(para)
+     }
+
+     button1.addEventListener("click", viewChange1);
+     button2.addEventListener("click", viewChange2);
+     button3.addEventListener("click", viewChange3);
+     button4.addEventListener("click", viewChange4);
   </script>
         
   <div class="grid-container">
@@ -59,10 +172,10 @@
 
   <br>
 
-  <center><button type="button" onclick="function click()">4</button>
-  <button type="button" onclick="function click()">4</button>
-  <button type="button" onclick="function click()">4</button>
-  <button type="button" onclick="function click()">4</button></center>
+  <center><input type="button" id="button1" value="4"></button>
+  <input type="button" id="button2" value="4"></button>
+  <input type="button" id="button3" value="4"></button>
+  <input type="button" id="button 4" value="4"></button></center>
 
   </br> 
 

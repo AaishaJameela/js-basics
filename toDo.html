@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+</head>
+<body>
+    <script>
+        window.onload = () => {
+            const form1 = document.querySelector("#addForm");
+            let items = document.getElementById("items");
+            let submit = document.getElementById("submit");
+            
+            form1.addEventListener("submit", addItem);
+            items.addEventListener("click", removeItem);
+         };
+  
+        function addItem(e) {
+        e.preventDefault();
+            if (submit.value != "Submit") {
+                console.log("Hello");
+  
+                editItem.target.parentNode.childNodes[0].data=document.getElementById("item").value;
+  
+                submit.value = "Submit";
+                document.getElementById("item").value = "";
+  
+                document.getElementById("lblsuccess").style.display="block";
+  
+        setTimeout(function() {
+            document.getElementById("lblsuccess").style.display="none";
+        }, 3000);
+  
+        return false;
+        }
+  
+        let newItem = document.getElementById("item").value;
+        if (newItem.trim() == "" || newItem.trim() == null)
+            return false;
+        else
+            document.getElementById("item").value = "";
+  
+        let li = document.createElement("li");
+        li.className = "list-group-item";
+  
+        let deleteButton = document.createElement("button");
+  
+        deleteButton.className="btn-danger btn btn-sm float-right delete";
+       
+        deleteButton.appendChild(document.createTextNode("Delete"));
+  
+        li.appendChild(document.createTextNode(newItem));
+        li.appendChild(deleteButton);
+  
+        items.appendChild(li);
+    }
+  
+    function removeItem(e) {
+    e.preventDefault();
+    if (e.target.classList.contains("delete")) {
+        if (confirm("Are you Sure?")) {
+            let li = e.target.parentNode;
+            items.removeChild(li);
+            document.getElementById("lblsuccess").innerHTML="Text deleted successfully";
+  
+            document.getElementById("lblsuccess").style.display="block";
+  
+            setTimeout(function() {
+                document.getElementById("lblsuccess").style.display="none";
+            }, 3000);
+        }
+    }
+    }
+  
+function toggleButton(ref, btnID) {
+    document.getElementById(btnID).disabled = false;
+}
+    </script>
+    <header class="bg-success text-white p-5">
+        <center><div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <font face="Times New Roman" 
+                        size="11" color="black">
+                        <strong>To Do List</strong>
+                    </font>
+                       
+                </div>
+            </div>
+        </div>
+    </header>
+  
+    <div class="container mt-3">
+   
+        <label id="lblsuccess" class="text-success" style="display: none;"></label>
+          
+          <center><form id="addForm">
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-7">
+  
+                    <input type="text" onkeyup=
+                        "toggleButton(this, 'submit')"
+                        class="form-control" id="item">
+                </div>
+  
+                <br><div class="col-lg-5 col-md-5 col-sm-5">
+                  <input type="submit" class="btn btn-dark"
+                        id="submit" value="Submit" disabled>
+                </div>
+            </div>
+        </form></center>
+   
+        <center><form id="addForm">
+            <ul class="list-group" id="items"></ul>
+        </form><br></center>
+    </div></center>
+      
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average</title>
+</head>
+
+<body>
+  <center><h1>Average Score</h1>
+  Enter your score in grade 7:<input type="text" id="score7"><br>
+  Enter your score in grade 8:<input type="text" id="score8"><br>
+  Enter your score in grade 9:<input type="text" id="score9"><br>
+  Enter your score in grade 10:<input type="text" id="score10"><br>
+  <input type="button" id="button1" value="Submit"></center>
+    <script>
+        var button=document.getElementById("button1");
+        button.addEventListener("click", Submit)
+        
+        function average(grade7){  
+           return function(grade8){
+             return function(grade9){
+                return function(grade10){
+                    (Number(grade7) + Number(grade8) + Number(grade9) + Number(grade10)) /4
+                }
+             }
+           }
+         }
+
+    function Submit(){
+        var grade7=document.getElementById("score7").value;
+        var grade8=document.getElementById("score8").value;
+        var grade9=document.getElementById("score9").value;
+        var grade10=document.getElementById("score10").value;
+        console.log(average(grade7)(grade8)(grade9)(grade10))
+
+        var avg=document.createElement('p')
+        avg.textContent="Your average academic score is" +average(grade7)(grade8)(grade9)(grade10);
+
+    }
+    </script>
+</body>
+</html>

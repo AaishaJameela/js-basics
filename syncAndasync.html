@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <button id="btn1">using.then</button>
+        <button id="btn2">using await</button>
+    </center>
+</body>
+<script>
+const url="https://jsonplaceholder.typicode.com/posts";
+const button1 = document.getElementById('btn1');
+const asyncButton2 = document.getElementById('btn2');
+var responseType="text";
+
+    function getResponse (responseType) {
+        fetch(url).then((response)=>
+            {
+            if (responseType === "text")
+            {
+            return response.text();
+            }
+            else
+            {
+            return response.json();
+            }
+            }).then((data)=>
+            {
+            console.log(data);
+            localStorage.setItem("syncResponse", data);
+            })  
+    }
+
+button1.addEventListener('click', () => {
+  getResponse(responseType);
+});
+
+asyncButton2.addEventListener('click', async () => {
+  responseType="json";
+  await getResponse(responseType);
+});
+
+</script>
+</html>

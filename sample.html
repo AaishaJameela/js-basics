@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<body>
+    <script>
+    const array1=[1,2,3];
+    const array2=[4,5,6];
+    const combo=array1.concat(array2);
+    console.log(combo);
+
+     for(Number=1; Number<=10; Number++){
+        for(i=1; i<=12; i++){
+            console.log(Number +"*" +i +"=" + Number*i );
+        }
+     }
+    
+     function convertDistance(){
+        let getDistance=prompt("Enter the distance in kilometers:");
+        newDistance=0.62137*getDistance;
+        console.log(newDistance +" miles");
+        
+     }
+     convertDistance();
+
+     let numbers=[1,2,3];
+     let newNumbers=numbers.reduce(function getSum(result,item){
+         return result+item;
+     })
+     console.log(newNumbers);
+
+     let names=["aaisha", "aarifa"];
+     names.reverse();
+     console.log(names);
+
+     let scores=[20,30,40];
+     scores.sort();
+     scores.reverse();
+     console.log(scores);
+
+    let number=[1,-1,-3,4];
+    let newNumber=number.filter(findPositive)
+    function findPositive(item){
+        return item<0;
+    }
+    console.log(newNumber);
+
+    let name ="    aaisha    "
+    let newName = name.trim();
+    console.log(newName);
+    
+    const date= new Date();
+
+    const x=Math.random();
+    console.log(x);
+
+    let getNumber = prompt("Enter a number. We'll tell you if it's prime or not!");
+    let Prime = true;
+
+    if (getNumber === 1) {
+        console.log("1 is neither a prime nor a composite number.");
+    }
+    else if (getNumber > 1) {
+        for (let i = 2; i < getNumber; i++) {
+            if (getNumber % i == 0) {
+                Prime = false;
+                break;
+            }
+        }
+    if (Prime) {
+        console.log(`${getNumber} is a prime number`);
+    } else {
+        console.log(`${getNumber} is not a prime number`);
+    }
+    }
+
+    let quote=["A", "Quick", "Brown", "Fox", "Jumps", "Over", "A", "Lazy", "Dog"];
+    delete quote[0]; 
+    delete quote[3]; 
+    delete quote[6]; 
+    delete quote[8]; 
+    console.log(quote);
+
+    function checkDivisible(){
+        for(let i=0; i<11; i++){
+            let getNumber=prompt("Enter a number to check its divisibility");
+            if(getNumber % 7 === 0)
+            console.log("Congrats! Your number is divisible by 7..")
+            else
+                console.log("Oh no.. your number isn't divisible by 7")
+            }
+    }
+    checkDivisible();
+            
+    </script>
+</body>
+</html>
